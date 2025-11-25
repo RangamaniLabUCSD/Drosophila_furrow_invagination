@@ -1,0 +1,98 @@
+
+function pstruct = config_global_fn()
+
+% % Force per unit circumferential length and constitutive parameters table
+f_mp0 = 5.15*10^(-3);       % micro N/micro m. 
+m1 = f_mp0/35;              % micro N/(micro m)^2. 
+f_m0 = 100;                 % micro N/micro m. 
+lambda_kv0 = 9.8*10^(-5);   % micro N/micro m. 
+mu_d = 1.5*10^(-6);         % micro N*s/micro m^2. 
+
+% % Parameters just for the code
+veAdd = 0;                  % Series (= 0) or parallel (= 1) addition of Kelvin-Voigt springs
+var_lamMS = 0;              % Use lambda_ms as a parameter (= 0) or as a variable with a step change (= 1)
+var_fmpL = 0;               % Different motor protein force cases
+
+% % Time parameters table
+tau_slw = 0*60;                     % seconds. 
+tau_fst = 33.75*60;                 % seconds. 
+tau_stl = 60*60;                    % seconds. 
+tau_mpL = 5*60;                     % seconds. Time when f_mp0 turns on
+tau_v = 33.75*60;                   % seconds. 
+tau_bfa = 100*60;                   % seconds. 
+tau_kv = 10;                        % seconds. 
+tau_md = 100;                       % seconds. 
+tau_u_conc = (1.8*10^(-3))^(-1);    % micromolarity*seconds. 
+tau_b = (1.8*10^(-3))^(-1);         % seconds. 
+tanh_slope1 = 10^(2.5);         
+
+% % Length parameters table
+r_c = 2.7;                  % micro m. 
+L_f0 = 20;                  % micro m. 
+L_T0 = .02;                 % micro m. 
+L_Tf = 35;                  % micro m. 
+L_mv = 2.1;                 % micro m. 
+
+% % Area parameters table
+alpha_m = .5;                        % 1/micro m^2. 
+alpha_v = 60;                        % 1/micro m^2. 
+
+% % Other parameters table
+Phi_kv = .275;                   % Unitless.
+Phi_nb = 1;                      % Unitless.
+n_b0 = 1;                        % Unitless.   
+n_u0 = 1;                        % Unitless.   
+
+% % Store in a structure
+pstruct = struct( 'f_mp0',f_mp0,...
+    'm1',m1,...
+    'f_m0',f_m0,...
+    'lambda_kv0',lambda_kv0,...
+    'mu_d',mu_d,...
+    'veAdd',veAdd,...
+    'var_lamMS',var_lamMS,...
+    'var_fmpL',var_fmpL,...
+    'tau_slw',tau_slw,...
+    'tau_fst',tau_fst,...
+    'tau_stl',tau_stl,...
+    'tau_v',tau_v,...
+    'tau_bfa',tau_bfa,...
+    'tau_kv',tau_kv,...
+    'tau_md',tau_md,...
+    'tau_u_conc',tau_u_conc,...
+    'tau_b',tau_b,...
+    'tau_mpL',tau_mpL,...
+    'r_c',r_c,...
+    'L_f0',L_f0,...
+    'L_T0',L_T0,...
+    'L_Tf',L_Tf,...
+    'L_mv',L_mv,...
+    'alpha_m',alpha_m,...
+    'alpha_v',alpha_v,...
+    'Phi_kv',Phi_kv,...
+    'Phi_nb',Phi_nb,...
+    'tanh_slope1',tanh_slope1,...
+    'n_b0',n_b0,...
+    'n_u0',n_u0);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
